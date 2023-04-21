@@ -2,7 +2,7 @@
   description = "Home Manager configuration of jjorgens";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
+    # emacs-overlay is in the nix registry list and so is implicit
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,8 +13,8 @@
   outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
-      # pkgs = nixpkgs.legacyPackages.${system};
-      # pkgs = nixpkgs.legacyPackages.${system}.extend emacs-overlay.overlay;
+      # allow unfree software (mostly for steam)
+      # apply emacs overlay so I can have my bleeding edge emacsGit
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
