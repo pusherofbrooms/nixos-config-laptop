@@ -108,6 +108,46 @@
     EDITOR = "emacs";
   };
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    historyControl = [ "ignoredups" "ignorespace" ];
+    shellAliases = {
+      ls = "ls -G";
+    };
+    sessionVariables = {
+      GIT_PS1_SHOWDIRTYSTATE = 1;
+    };
+    bashrcExtra = ''
+# turn off terminal stop ctl-s
+stty -ixon
+
+# readline settings
+bind 'set show-all-if-ambiguous on'
+bind 'set menu-complete-display-prefix on'
+bind 'set colored-completion-prefix on'
+bind 'set colored-stats on'
+bind 'TAB: menu-complete'
+bind '"\e[Z": menu-complete-backward'
+
+# aws completion
+complete -C '$HOME/.nix-profile/bin/aws_completer' aws
+
+# git completion
+source $HOME/.nix-profile/share/git/contrib/completion/git-completion.bash
+
+# There are many like it, but this one is mine.
+# I can't seem to get this to work in the sessionVariables section
+source $HOME/.nix-profile/share/git/contrib/completion/git-prompt.sh
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 "(%s)")\$\[\e[m\] \[\e[1;37m\]'
+'';
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
