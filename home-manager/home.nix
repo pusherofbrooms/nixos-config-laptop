@@ -106,7 +106,15 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "emacs";
+    WLR_NO_HARDWARE_CURSORS = 1;
   };
+
+  # temporary extra path
+  home.sessionPath = [
+    "$HOME/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.local/bin"
+  ];
 
   programs.bash = {
     enable = true;
@@ -114,13 +122,16 @@
     historyControl = [ "ignoredups" "ignorespace" ];
     shellAliases = {
       ls = "ls -G";
+      ll = "ls -AlF";
+      la = "ls -A";
+      l = "ls -CF";
     };
     sessionVariables = {
       GIT_PS1_SHOWDIRTYSTATE = 1;
     };
     bashrcExtra = ''
-# turn off terminal stop ctl-s
-stty -ixon
+# reclaim ctl-s and ctl-q from tty
+stty -ixon -ixoff
 
 # readline settings
 bind 'set show-all-if-ambiguous on'
