@@ -20,14 +20,14 @@
   home.packages = with pkgs; [
     # One imagines that one would need to install an emacs variant
     # before installing packages, but that appears to not be the case.
-    # emacsGit
+    # emacs-git
     git
     htop
     keepassxc
     steam
     slack
 
-    ((emacsPackagesFor emacsGit).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
       epkgs.vterm
       epkgs.multi-vterm
       epkgs.geiser-guile
