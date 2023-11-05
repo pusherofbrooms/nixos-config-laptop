@@ -36,7 +36,6 @@
     pwgen
     ripgrep
     slack
-    steam
     thunderbird
     tree
     wget
