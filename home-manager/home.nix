@@ -21,49 +21,54 @@
     # One imagines that one would need to install an emacs variant
     # before installing packages, but that appears to not be the case.
     # emacs-git
+    awscli2
+    bottom
+    dos2unix
+    firefox
+    fzf
+    gawk
     git
+    git-lfs
     htop
+    jq
     keepassxc
-    steam
+    nmap
+    pwgen
+    ripgrep
     slack
+    steam
+    thunderbird
+    tree
+    wget
 
     ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
-      epkgs.vterm
-      epkgs.multi-vterm
-      epkgs.geiser-guile
-      epkgs.geiser
-      epkgs.direnv
-      epkgs.counsel
-      epkgs.yasnippet-snippets
-      epkgs.yasnippet
-      epkgs.toml-mode
-      epkgs.csv-mode
-      epkgs.company-quickhelp
+      epkgs.auto-complete
       epkgs.company
+      epkgs.company-irony
+      epkgs.company-quickhelp
+      epkgs.counsel
+      epkgs.csv-mode
+      epkgs.direnv
       epkgs.exec-path-from-shell
-      epkgs.markdown-mode
+      epkgs.flycheck
+      epkgs.flycheck-irony
+      epkgs.irony
+      epkgs.irony-eldoc
       epkgs.js2-mode
-      epkgs.yaml-mode
+      epkgs.magit
+      epkgs.markdown-mode
+      epkgs.multi-vterm
+      epkgs.nix-mode
+      epkgs.platformio-mode
+      epkgs.popup
       epkgs.projectile
       epkgs.rust-mode
-      epkgs.auto-complete
+      epkgs.toml-mode
+      epkgs.vterm
       epkgs.web-mode
-      epkgs.magit
-      epkgs.flycheck
-      epkgs.nix-mode
-      # The nixpkgs irony package seems to function ok.
-      emacsPackages.irony
-      emacsPackages.platformio-mode
-      emacsPackages.irony-eldoc
-      emacsPackages.flycheck-irony
-      emacsPackages.company-irony
-
-      # irony from emacs-overlay won't pass its tests right now. Save for later.
-      # epkgs.irony
-      # epkgs.platformio-mode
-      # epkgs.irony-eldoc
-      # epkgs.flycheck-irony
-      # epkgs.company-irony
+      epkgs.yaml-mode
+      epkgs.yasnippet
+      epkgs.yasnippet-snippets
     ]))
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -161,4 +166,7 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 "(%s)
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # set popular env (XDG_DATA_HOME, etc.)
+  targets.genericLinux.enable = true;
 }
