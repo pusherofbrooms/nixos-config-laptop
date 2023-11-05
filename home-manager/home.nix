@@ -59,6 +59,7 @@
       epkgs.markdown-mode
       epkgs.multi-vterm
       epkgs.nix-mode
+      epkgs.org-ai
       epkgs.platformio-mode
       epkgs.popup
       epkgs.projectile
