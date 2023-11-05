@@ -167,6 +167,9 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 "(%s)
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # ssh-agent
+  services.ssh-agent.enable = true;
+
   # set popular env (XDG_DATA_HOME, etc.)
   targets.genericLinux.enable = true;
 }
