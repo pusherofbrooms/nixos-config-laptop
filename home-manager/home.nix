@@ -39,6 +39,7 @@
     thunderbird
     tree
     wget
+    wofi
 
     ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
       epkgs.auto-complete
@@ -126,10 +127,10 @@
     enableCompletion = true;
     historyControl = [ "ignoredups" "ignorespace" ];
     shellAliases = {
-      ls = "ls -G";
-      ll = "ls -AlF";
-      la = "ls -A";
-      l = "ls -CF";
+      ls = "ls --color";
+      ll = "ls -AlF --color";
+      la = "ls -A --color";
+      l = "ls -CF --color";
     };
     sessionVariables = {
       GIT_PS1_SHOWDIRTYSTATE = 1;
