@@ -38,6 +38,7 @@
     slack
     thunderbird
     tree
+    waybar
     wget
     wofi
 
