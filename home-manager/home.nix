@@ -21,8 +21,10 @@
     # One imagines that one would need to install an emacs variant
     # before installing packages, but that appears to not be the case.
     # emacs-git
+    amdgpu_top
     awscli2
     bottom
+    btop
     dos2unix
     firefox
     fzf
@@ -32,6 +34,9 @@
     htop
     jq
     keepassxc
+    mako
+    nerdfonts
+    nextcloud-client
     nmap
     pwgen
     ripgrep
@@ -53,6 +58,7 @@
       epkgs.exec-path-from-shell
       epkgs.flycheck
       epkgs.flycheck-irony
+      epkgs.gptel
       epkgs.irony
       epkgs.irony-eldoc
       epkgs.js2-mode
@@ -60,7 +66,7 @@
       epkgs.markdown-mode
       epkgs.multi-vterm
       epkgs.nix-mode
-      epkgs.org-ai
+      epkgs.org-tree-slide
       epkgs.platformio-mode
       epkgs.popup
       epkgs.projectile
