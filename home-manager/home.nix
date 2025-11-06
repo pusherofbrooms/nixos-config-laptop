@@ -26,6 +26,8 @@
     bottom
     btop
     dos2unix
+    fira-code
+    fira-code-symbols
     firefox
     fzf
     gawk
@@ -35,7 +37,6 @@
     jq
     keepassxc
 #    mako
-    nerdfonts
     nextcloud-client
     nmap
     pwgen

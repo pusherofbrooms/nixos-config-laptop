@@ -61,9 +61,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-    xkbOptions = "ctrl:nocaps";
+    xkb.layout = "us";
+    xkb.variant = "";
+    xkb.options = "ctrl:nocaps";
     # for steam. maybe not needed.
     videoDrivers = [ "amdgpu" ];
   };
@@ -75,7 +75,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -108,7 +108,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # for steam. Fixed launch issue.
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget
