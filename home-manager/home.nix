@@ -34,7 +34,7 @@
     htop
     jq
     keepassxc
-    mako
+#    mako
     nerdfonts
     nextcloud-client
     nmap
