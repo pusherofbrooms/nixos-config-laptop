@@ -40,7 +40,6 @@
 
   # Enable sound with pipewire.
   hardware = {
-    pulseaudio.enable = false;
     # for steam. Fixed launch issue.
     graphics.enable32Bit = true;
     graphics.enable = true;
@@ -106,6 +105,7 @@
     # openssh.enable = true;
 
     # sound
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;
