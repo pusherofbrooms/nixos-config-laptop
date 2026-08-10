@@ -248,7 +248,7 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 "(%s)
             "$mod SHIFT, E, exit"
             "$mod, V, toggleFloating"
             "$mod, P, pseudo"
-            "$mod, J, togglesplit"
+     #       "$mod, J, togglesplit"
             "$mod, left, movefocus, l"
             "$mod, right, movefocus, r"
             "$mod, up, movefocus, u"
