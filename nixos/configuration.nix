@@ -149,7 +149,8 @@
   # docker support
   virtualisation = {
     docker.enable = true;
-    docker.storageDriver = "btrfs";
+    # Root is ext4; btrfs only works when /var/lib/docker is on btrfs.
+    docker.storageDriver = "overlay2";
   };
   
 
